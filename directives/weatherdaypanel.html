@@ -1,0 +1,24 @@
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						<img ng-src="http://openweathermap.org/img/w/{{ weatherDay.weather[0].icon }}.png">
+						<strong>{{ convertToDate({ dt: weatherDay.dt }) | date: dateFormat }}</strong>
+					</h3>
+				</div>
+				<div class="panel-body">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6">
+								Morning temperature: {{ convertToStandard({ daytimeTemp: weatherDay.temp.morn }) }}&deg;<br/>
+								Daytime temperature: {{ convertToStandard({ daytimeTemp: weatherDay.temp.day }) }}&deg;<br/>
+								Evening temperature: {{ convertToStandard({ daytimeTemp: weatherDay.temp.night}) }}&deg;<br />
+							</div>
+							<div class="col-md-6">
+								Sky: {{ weatherDay.weather[0].main }}<br/>
+								Humidity: <span ng-if="weatherDay.humidity == 0">Not yet available</span><span ng-if="weatherDay.humidity > 0">{{ weatherDay.humidity }}%</span><br/>
+								Wind Speed: {{ weatherDay.speed }}MPH
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
