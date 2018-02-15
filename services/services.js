@@ -1,6 +1,6 @@
 // SERVICES
 weatherapp.service('cityService', function() {
- 	this.city = 'Raleigh, NC';
+ 	this.city = 'Raleigh';
 });
 
 weatherapp.service('weatherService', ['$resource', function($resource) {
